@@ -1,0 +1,157 @@
+.miniwidget-icon1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 139px;
+  height: 66px;
+  object-fit: cover;
+}
+.button-item {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-7xs);
+  background-color: var(--color-black);
+  border: 1px solid var(--color-darkviolet);
+  box-sizing: border-box;
+  display: none;
+}
+.log-in2 {
+  position: absolute;
+  top: 15.45%;
+  left: 25.67%;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+.button1,
+.contacts1 {
+  position: absolute;
+  top: 16px;
+  left: 45px;
+  width: 90px;
+  height: 33px;
+}
+.contacts1 {
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  width: 38.7px;
+  height: 38.7px;
+}
+.icons8-log-in-96-11 {
+  position: absolute;
+  top: 7.8px;
+  left: 7.1px;
+  width: 22.5px;
+  height: 22.5px;
+  object-fit: cover;
+}
+.log-in3 {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  width: 38.7px;
+  height: 38.7px;
+}
+.miniwidget1,
+.taskbar-icon2 {
+  position: absolute;
+  top: 40px;
+  left: 1412px;
+  width: 139px;
+  height: 66px;
+}
+.taskbar-icon2 {
+  top: 31px;
+  left: 68px;
+  width: 115px;
+  height: 1017px;
+}
+.cs1-icon,
+.more-icon {
+  position: absolute;
+  top: 573px;
+  left: 1213px;
+  width: 224px;
+  height: 228px;
+  object-fit: cover;
+}
+.cs1-icon {
+  left: 337px;
+}
+.cs2-icon,
+.cs3-icon,
+.cs4-icon,
+.cs5-icon,
+.cs6-icon,
+.image-7-icon {
+  position: absolute;
+  top: 279px;
+  left: 633px;
+  width: 224px;
+  height: 228px;
+  object-fit: cover;
+}
+.cs3-icon,
+.cs4-icon,
+.cs5-icon,
+.cs6-icon,
+.image-7-icon {
+  top: 573px;
+}
+.cs4-icon,
+.cs5-icon,
+.cs6-icon,
+.image-7-icon {
+  top: 279px;
+  left: 923px;
+}
+.cs5-icon,
+.cs6-icon,
+.image-7-icon {
+  left: 1213px;
+}
+.cs6-icon,
+.image-7-icon {
+  top: 573px;
+  left: 923px;
+}
+.image-7-icon {
+  top: 280px;
+  left: 342px;
+}
+.listpage {
+  position: relative;
+  background-color: var(--color-black);
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-mini);
+  color: var(--color-white);
+  font-family: var(--font-poppins);
+}
+.image-12-icon,
+.image-13-icon,
+.image-14-icon {
+  position: absolute;
+  top: 243px;
+  left: 95px;
+  width: 60.5px;
+  height: 61px;
+  object-fit: cover;
+}
+.image-13-icon,
+.image-14-icon {
+  top: 157px;
+}
+.image-14-icon {
+  top: 73px;
+  left: 96px;
+  height: 60.5px;
+}
