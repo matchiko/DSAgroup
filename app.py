@@ -17,7 +17,6 @@ def index():
 def ListPage():
     return render_template('ListPage.html')
 
-
 @app.route('/templates/Memberpage.html')
 def Memberpage():
     return render_template('Memberpage.html')
@@ -76,8 +75,6 @@ def dir():
 
     return render_template("dir.html",test_data=test_data)
 
-
-
 @app.route("/search", methods=["POST"])
 def search():
     data = request.get_json()
@@ -99,3 +96,7 @@ def search():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+@app.route('/templates/Postfix.html')
+def Postfix():
+    return render_template('Postfix.html')
