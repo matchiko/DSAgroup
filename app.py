@@ -25,6 +25,10 @@ def Memberpage():
 def ResultsPage():
     return render_template('ResultsPage.html')
 
+@app.route('/templates/Postfix.html')
+def Postfix():
+    return render_template('Postfix.html')
+
 @app.route("/templates/dir.html", methods=["GET", "POST"])
 def dir():
     
@@ -96,7 +100,3 @@ def search():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-@app.route('/templates/Postfix.html')
-def Postfix():
-    return render_template('Postfix.html')
