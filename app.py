@@ -6,6 +6,7 @@ from interpolation_search import interpolation_search, interpolation_search_wrap
 from jump_search import jump_search, jump_search_wrapper
 from linear_search import linear_search, linear_search_wrapper
 from ternary_search import ternary_search, ternary_search_wrapper
+from postfix import infix_to_postfix
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -25,11 +26,22 @@ def Memberpage():
 def ResultsPage():
     return render_template('ResultsPage.html')
 
-@app.route('/templates/Postfix.html')
+@app.route('/templates/Postfix.html', methods=["GET", "POST"])
 def Postfix():
-    return render_template('Postfix.html')
+    # Request Infix Expression
+    if request.method == "POST":
+        infix_str = request.form.get("infix")
 
-@app.route("/templates/dir.html", methods=["GET", "POST"])
+        try:
+            float(infix_str)
+            return render_template("Postfix.html", error="Invalid input. Ensure the operators are only `*`, `(`, `)`, `+`, `-`, or `/`, and free from numbers or whitespaces.")
+        except:
+            result = infix_to_postfix(infix_str)
+            return render_template("Postfix.html", result=result, infix_str=infix_str)
+    else:
+        return render_template('Postfix.html', result=None)
+
+@app.route("/templates/searchalgo-interface.html", methods=["GET", "POST"])
 def dir():
     
     numbers = range(1, 1001)
@@ -72,12 +84,12 @@ def dir():
                 result = ternary_search_wrapper(ternary_search, array, target, low, high)  
                 # result = ternary_search(array, target, low, high)
 
-            return render_template("dir.html", result=result, search_type=search_type, execution_time=execution_time,test_data=test_data)
+            return render_template("searchalgo-interface.html", result=result, search_type=search_type, execution_time=execution_time,test_data=test_data)
         except ValueError:
-            return render_template("dir.html", error="Invalid input. Ensure the array and target are integers.")
+            return render_template("searchalgo-interface.html", error="Invalid input. Ensure the array and target are integers.")
     
 
-    return render_template("dir.html",test_data=test_data)
+    return render_template("searchalgo-interface.html",test_data=test_data)
 
 @app.route("/search", methods=["POST"])
 def search():

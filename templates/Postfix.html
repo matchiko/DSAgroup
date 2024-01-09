@@ -85,20 +85,39 @@
       <div class="infix-to-postfix">
         <div class="your-converted-postfix-container">
           <p class="operands-precede-operators">
-            Your converted postfix expression is
+            Your converted postfix expression is:
           </p>
-          <p class="operands-precede-operators"></p>
-        </div>
-        <div class="submit-field">
-          <div class="ob-formstype-your-infix-notat">
-            <div class="type-your-infix">Type your infix notation here</div>
-            <div class="frame">
-              <div class="name">Type your infix notation here</div>
+          <p class="operands-precede-operators">
+            {% if result != None %}
+            <div class="alert alert-success mt-3" role="alert">
+              {{ result }}
             </div>
-          </div>
-          <div class="ob-formssubmit">
-            <div class="name">Submit</div>
-          </div>
+            {% endif %}
+            {% if error and result != None %}
+              <div class="alert alert-danger mt-3" role="alert">
+                {{ error }}
+              </div>
+            {% endif %}
+            {% if result == None %}
+              <div class="alert" role="alert">
+                no input data.
+              </div>
+            {% endif %}
+          </p>
+        </div>
+
+        <div class="submit-field">
+          <form method="post">
+            <div class="ob-formstype-your-infix-notat">
+              <div class="type-your-infix">Type your infix notation here</div>
+              <div class="frame">
+                <input type="text" class="form-control" id="infix" name="infix" placeholder="Type your infix notation here" size="40" required>
+              </div>
+            </div>
+            <div class="ob-formssubmit">
+              <button type="submit">Convert</div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
