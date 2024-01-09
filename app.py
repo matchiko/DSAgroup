@@ -25,9 +25,9 @@ def Memberpage():
 def ResultsPage():
     return render_template('ResultsPage.html')
 
-@app.route('/templates/infix-interface.html')
+@app.route('/templates/Postfix.html')
 def Postfix():
-    return render_template('infix-interface.html')
+    return render_template('Postfix.html')
 
 @app.route("/templates/searchalgo-interface.html", methods=["GET", "POST"])
 def dir():
