@@ -1,0 +1,234 @@
+.miniwidget-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 139px;
+    height: 66px;
+    object-fit: cover;
+  }
+  .button-child {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 6px;
+    background-color: var(--color-black);
+    border: 1px solid #bd00ff;
+    box-sizing: border-box;
+    display: none;
+  }
+  .log-in {
+    position: absolute;
+    top: 15.45%;
+    left: 25.67%;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+  }
+  .button,
+  .contacts {
+    position: absolute;
+    top: 16px;
+    left: 45px;
+    width: 90px;
+    height: 33px;
+  }
+  .contacts {
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    width: 38.7px;
+    height: 38.7px;
+  }
+  .icons8-log-in-96-1 {
+    position: absolute;
+    top: 7.8px;
+    left: 7.1px;
+    width: 22.5px;
+    height: 22.5px;
+    object-fit: cover;
+  }
+  .log-in1,
+  .miniwidget {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    width: 38.7px;
+    height: 38.7px;
+  }
+  .miniwidget {
+    top: 40px;
+    left: 1412px;
+    width: 139px;
+    height: 66px;
+    text-align: center;
+    font-size: 15px;
+    font-family: var(--font-poppins);
+  }
+  .taskbar-icon {
+    position: absolute;
+    top: 31px;
+    left: 68px;
+    width: 115px;
+    height: 1017px;
+    object-fit: cover;
+  }
+  .convert-infix-to {
+    position: absolute;
+    top: 158px;
+    left: 301px;
+    font-size: 48px;
+    letter-spacing: -0.01em;
+    line-height: 72px;
+    font-weight: 600;
+    font-family: var(--font-poppins);
+    display: inline-block;
+    width: 750px;
+    height: 144px;
+  }
+  .department-of-computer,
+  .operators-are-positioned {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    line-height: 28px;
+    display: inline-block;
+    width: 1202px;
+    height: 139px;
+  }
+  .department-of-computer {
+    top: 208px;
+    left: 778px;
+    text-align: right;
+    width: 424px;
+    height: 27px;
+  }
+  .what-defines-an {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: var(--font-size-5xl);
+    letter-spacing: -0.01em;
+    line-height: 36px;
+    display: inline-block;
+    font-family: var(--font-poppins);
+    width: 686px;
+    height: 36px;
+  }
+  .definition-of-infix-expression {
+    position: absolute;
+    top: 700px;
+    left: 321px;
+    width: 1202px;
+    height: 235px;
+  }
+  .operands-precede-operators {
+    margin: 0;
+  }
+  .definition-of-postfix-expressi {
+    position: absolute;
+    top: 1000px;
+    left: 321px;
+    width: 1202px;
+    height: 235px;
+  }
+  .type-your-infix,
+  .your-converted-postfix-container {
+    position: absolute;
+    top: 87px;
+    left: 80px;
+    line-height: 28px;
+  }
+  .type-your-infix {
+    height: 33.33%;
+    width: 100%;
+    top: 1.19%;
+    left: 0;
+    display: inline-block;
+  }
+  .name {
+    position: relative;
+    line-height: 28px;
+  }
+  .frame,
+  .ob-formstype-your-infix-notat {
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+  }
+  .frame {
+    width: 100%;
+    top: 28px;
+    right: 0;
+    border-radius: var(--br-8xs);
+    background-color: var(--color-white);
+    border: 1px solid #e2e1e5;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-3xs) var(--padding-mini);
+    color: #d2d2d2;
+  }
+  .ob-formstype-your-infix-notat {
+    top: 0;
+    width: 300px;
+    height: 84px;
+  }
+  .ob-formssubmit {
+    position: absolute;
+    top: 28px;
+    left: 323px;
+    border-radius: var(--br-8xs);
+    background-color: var(--color-gray);
+    border: 1px solid var(--color-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: var(--padding-3xs) var(--padding-mini);
+    text-align: center;
+    color: var(--color-white);
+  }
+  .submit-field {
+    position: absolute;
+    top: 10px;
+    right: 214px;
+    width: 400px;
+    height: 84px;
+    text-align: left;
+    color: var(--color-black);
+  }
+  .submit-field-02 {
+    position: absolute;
+    bottom: 300px;
+    left: 430px;
+    width: 400px;
+    height: 84px;
+    text-align: left;
+    color: var(--color-black);
+  }
+  .infix-to-postfix {
+    position: absolute;
+    top: 282px;
+    left: 640px;
+    width: 400px;
+    height: 143px;
+    text-align: center;
+  }
+  .postfixpage {
+    position: relative;
+    background-color: var(--color-black);
+    width: 100%;
+    height: 1300px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-sm);
+    color: var(--color-white);
+    font-family: var(--font-inter);
+  }
+  

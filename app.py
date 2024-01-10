@@ -26,6 +26,10 @@ def Memberpage():
 def ResultsPage():
     return render_template('ResultsPage.html')
 
+@app.route('/templates/Queue-Dequeue.html')
+def quedue():
+    return render_template('Queue-Dequeue.html')
+
 @app.route('/templates/Postfix.html', methods=["GET", "POST"])
 def Postfix():
     # Request Infix Expression
