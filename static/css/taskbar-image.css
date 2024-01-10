@@ -1,0 +1,19 @@
+.image-12-icon,
+.image-13-icon,
+.image-14-icon {
+  position: absolute;
+  top: 243px;
+  left: 95px;
+  width: 60.5px;
+  height: 61px;
+  object-fit: cover;
+}
+.image-13-icon,
+.image-14-icon {
+  top: 157px;
+}
+.image-14-icon {
+  top: 73px;
+  left: 96px;
+  height: 60.5px;
+}

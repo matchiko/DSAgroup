@@ -7,6 +7,7 @@ from jump_search import jump_search, jump_search_wrapper
 from linear_search import linear_search, linear_search_wrapper
 from ternary_search import ternary_search, ternary_search_wrapper
 from postfix import infix_to_postfix
+from Queue_Dequeue import input_dequeue, input_queue
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -25,6 +26,23 @@ def Memberpage():
 @app.route('/templates/ResultsPage.html')
 def ResultsPage():
     return render_template('ResultsPage.html')
+
+@app.route('/templates/Queue-Dequeue.html', methods=["GET", "POST"])
+def quedue():
+    if request.method == "POST":
+        is_queued = request.form.get('queuer')
+        is_dequeued = request.form.get('dequeuer')
+        print(is_queued)
+        print(is_dequeued)
+
+        if is_dequeued is None:
+           result = input_queue(is_queued)
+           return render_template("Queue-Dequeue.html", result=result, is_queued=is_queued, is_dequeued=is_dequeued)
+        if is_queued is None:
+            result = input_dequeue(is_dequeued)
+            return render_template("Queue-Dequeue.html", result=result, is_queued=is_queued, is_dequeued=is_dequeued)
+
+    return render_template('Queue-Dequeue.html', result=None)
 
 @app.route('/templates/Postfix.html', methods=["GET", "POST"])
 def Postfix():
