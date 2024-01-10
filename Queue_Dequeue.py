@@ -77,20 +77,20 @@ class Deque:
             self.rear.next = None
         return data
 
-queue = Queue()
-user_input = input("Enter text or numbers for the Queue (space-separated): ")
-for item in user_input.split():
-    queue.enqueue(item)
+def input_queue(queue_list):
+    queue = Queue()
+    for item in queue_list.split():
+        queue.enqueue(item)
 
-print("Queue:")
-while not queue.is_empty():
-    print(queue.dequeue())
+    print("Queue:")
+    while not queue.is_empty():
+        print(queue.dequeue())
 
-deque = Deque()
-user_input = input("Enter text or numbers for the Deque (space-separated): ")
-for item in user_input.split():
-    deque.add_front(item)
+def input_dequeue(queue_list):
+    deque = Deque()
+    for item in queue_list.split():
+        deque.add_front(item)
 
-print("Deque from front:")
-while not deque.is_empty():
-    print(deque.remove_front())
+    print("Deque from front:")
+    while not deque.is_empty():
+        print(deque.remove_front())
