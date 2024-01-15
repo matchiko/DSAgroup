@@ -27,7 +27,7 @@ class Stack:
         return self.top.data if self.top else None
 
 def is_operator(char):
-    return char in {'+', '-', '*', '/'}
+    return char in {'+', '-', '*', '/', '^'}
 
 def precedence(operator):
     if operator == '+' or operator == '-':
@@ -39,6 +39,7 @@ def precedence(operator):
 def infix_to_postfix(infix_expression):
     stack = Stack()
     postfix = []
+    operators = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3}
     
     for char in infix_expression:
         if char.isalnum():
@@ -50,7 +51,7 @@ def infix_to_postfix(infix_expression):
                 postfix.append(stack.pop())
             stack.pop()  # Pop '(' from the stack
         elif is_operator(char):
-            while not stack.is_empty() and precedence(stack.peek()) >= precedence(char):
+            while not stack.is_empty() and operators.get(stack.peek(), 0) >= operators[char]:
                 postfix.append(stack.pop())
             stack.push(char)
 
@@ -58,9 +59,3 @@ def infix_to_postfix(infix_expression):
         postfix.append(stack.pop())
 
     return ''.join(postfix)
-
-# Example usage
-infix_expression = "a+b*c-(d/e+f*g)"
-postfix_expression = infix_to_postfix(infix_expression)
-print("Infix Expression:", infix_expression)
-print("Postfix Expression:", postfix_expression)

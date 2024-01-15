@@ -1,4 +1,5 @@
 import timeit
+from importlib import reload
 from flask import Flask, request, jsonify, render_template
 from exponential_search import exponential_search, exponential_search_wrapper
 from binary_search import binary_search, binary_search_wrapper
@@ -7,7 +8,7 @@ from jump_search import jump_search, jump_search_wrapper
 from linear_search import linear_search, linear_search_wrapper
 from ternary_search import ternary_search, ternary_search_wrapper
 from postfix import infix_to_postfix
-from Queue_Dequeue import input_dequeue, input_queue
+from Queue_Dequeue import Queue, Deque
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -27,22 +28,22 @@ def Memberpage():
 def ResultsPage():
     return render_template('ResultsPage.html')
 
+queue = []
 @app.route('/templates/Queue-Dequeue.html', methods=["GET", "POST"])
-def quedue():
-    if request.method == "POST":
-        is_queued = request.form.get('queuer')
-        is_dequeued = request.form.get('dequeuer')
-        print(is_queued)
-        print(is_dequeued)
+def queue_operations():
+    Enqueue = None
+    Dequeue = None
+    if request.method == 'POST':
+        if request.form.get('enqueue', ''):
+            data = str(request.form.get('inputString', ''))
+            queue.append(data)
 
-        if is_dequeued is None:
-           result = input_queue(is_queued)
-           return render_template("Queue-Dequeue.html", result=result, is_queued=is_queued, is_dequeued=is_dequeued)
-        if is_queued is None:
-            result = input_dequeue(is_dequeued)
-            return render_template("Queue-Dequeue.html", result=result, is_queued=is_queued, is_dequeued=is_dequeued)
-
-    return render_template('Queue-Dequeue.html', result=None)
+        elif request.form.get('dequeue', ''):
+            if queue:
+                Dequeue = queue.pop(0)
+        return render_template('Queue-Dequeue.html', Enqueue=queue, Dequeue=Dequeue)
+    else:
+        return render_template('Queue-Dequeue.html', Enqueue=queue, Dequeue=Dequeue)
 
 @app.route('/templates/Postfix.html', methods=["GET", "POST"])
 def Postfix():
@@ -58,6 +59,10 @@ def Postfix():
             return render_template("Postfix.html", result=result, infix_str=infix_str)
     else:
         return render_template('Postfix.html', result=None)
+
+@app.route('/templates/hash-table.html', methods=['GET', 'POST'])
+def enchanting_table():
+    return render_template('hash-table.html')
 
 @app.route("/templates/searchalgo-interface.html", methods=["GET", "POST"])
 def dir():
