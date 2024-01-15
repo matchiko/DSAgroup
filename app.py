@@ -9,6 +9,7 @@ from linear_search import linear_search, linear_search_wrapper
 from ternary_search import ternary_search, ternary_search_wrapper
 from postfix import infix_to_postfix
 from Queue_Dequeue import Queue, Deque
+import hash_table
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -50,7 +51,6 @@ def Postfix():
     # Request Infix Expression
     if request.method == "POST":
         infix_str = request.form.get("infix")
-
         try:
             float(infix_str)
             return render_template("Postfix.html", error="Invalid input. Ensure the operators are only `*`, `(`, `)`, `+`, `-`, or `/`, and free from numbers or whitespaces.")
@@ -62,7 +62,33 @@ def Postfix():
 
 @app.route('/templates/hash-table.html', methods=['GET', 'POST'])
 def enchanting_table():
-    return render_template('hash-table.html')
+    if request.method == 'POST':
+        cmd = request.form.get('hashmethod')
+        numcommand = request.form.get('inputString')
+        listall = request.form.get('cmdlist')
+        new_list = listall.split('\r\n')
+        my_array = []
+        for item in new_list:
+            my_array.append(item)
+        
+        try:
+            # check if it is an integer
+            int(numcommand)
+        except(ValueError):
+            error = 'input is not integer. Please use integers only.'
+            return render_template('hash-table.html', cmd=None, numcommand=None, result=None, listall=None, error=error)
+        
+        #check if the number is greater than or equal to one.
+        numtype = int(numcommand)
+        if numtype >= 1:
+            result = hash_table.process_commands(my_array, cmd)
+            return render_template('hash-table.html', cmd=None, numcommand=None, result=result, listall=None, error=None)
+        if numtype <= 0:
+            error = 'input is less than 1. Please use an integer greater than or equal to 1.'
+            return render_template('hash-table.html', cmd=None, numcommand=None, result=None, listall=None, error=error)
+    
+    return render_template('hash-table.html', cmd=None, numcommand=None, result=None, listall=None, error=None)
+
 
 @app.route("/templates/searchalgo-interface.html", methods=["GET", "POST"])
 def dir():

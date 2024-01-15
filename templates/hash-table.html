@@ -63,11 +63,11 @@
       <div class="infix-to-postfix">
         <div class="your-converted-postfix-container">
           <p class="operands-precede-operators">
-            {% if Enqueue %}
-            <p class="Anim">Queue List: {{ " -> ".join(Enqueue) }}</p>
+            {% if error %}
+            <p class="Anim">{{error}}</p>
             {% endif %}
-            {% if Dequeue %}
-            <p class="Anim" > Dequeue: {{ Dequeue }}</p>
+            {% if result %}
+            <p class="Anim" > {{result}}</p>
             {% endif %}
           </p>
         </div>
@@ -79,11 +79,22 @@
 
         <div class="submit-field">
           <form for="/templates/Queue-Dequeue.html" method="post">
-            <label for="inputString" class="form-control" >  Enter a string:     </label>
-              <input type="text" id="inputString" name="inputString" placeholder="Type your data here" size="40">
-              <br>    
-              <input type="submit" id ="enequeue" name="enqueue" value="Queue"  class="btn">
-              <input type="submit" id ="dequeue" name="dequeue" value="Deque" class="btn">
+            <label for="inputString" class="form-control" style="color: white">  select a hash method:     </label>
+            <br>
+              <select name="hashmethod" id="hashmethod">
+                <option value="1">Hash Method 01</option>
+                <option value="2">Hash Method 02</option>
+                <option value="3">Hash Method 03</option>
+              </select>
+            <br>
+            <label for="inputString" class="form-control" style="color: white">  input how many commands:     </label>
+              <input type="text" id="inputString" name="inputString" placeholder="Number of commands. Must be an integer not less than one." size="40">
+            <br>    
+            <label for="cmdlist" class="form-control" style="color: white">  Enter the commands, one every new line. type del before the command (add a space in between) to delete the data:     </label>
+              <textarea id="cmdlist" name="cmdlist" rows="4" cols="50" placeholder="Input your commands here!">
+                </textarea>
+            <br>
+              <input type="submit" id ="hash" name="hash" value="hash" class="btn">
             </form>
           </div>
       </div>
