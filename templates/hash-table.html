@@ -66,15 +66,22 @@
             {% if error %}
             <p class="Anim">{{error}}</p>
             {% endif %}
+            {% if result == None%}
+              No data retrieved.
+            {%endif%}
             {% if result %}
-            <p class="Anim" > {{result}}</p>
+              <ul>
+                {%for item in result%}
+                  <li> {{item}} </li>
+                {%endfor%}
+              </ul>
             {% endif %}
           </p>
         </div>
 
         <div class="Rectangle23" style="width: 540px; height: 447px; right: 420px; top: -45px; position: absolute; background: rgba(217, 217, 217, 0); border-radius: 30px; border: 3px white solid"></div>
         </div>
-        <div class="Rectangle24" style="width: 360px; height: 447px; left: 925px; top: 125px; position: absolute; background: rgba(217, 217, 217, 0); border-radius: 30px; border: 3px white solid"></div>
+        <div class="Rectangle24" style="width: 360px; height: 1050px; left: 925px; top: 125px; position: absolute; background: rgba(217, 217, 217, 0); border-radius: 30px; border: 3px white solid"></div>
       </div>
 
         <div class="submit-field">
@@ -108,5 +115,12 @@
     <a href="/templates/Memberpage.html">
       <img class="image-12-icon" src="/static/public/image 12.png" alt="">
     </a>
+    <script>
+      function iterateThrough(result) {
+        for(let i = 0; i <= result; i++){
+          return '<li>' + i + '</li>'
+        }
+      }
+    </script>
   </body>
 </html>

@@ -62,7 +62,7 @@ def Postfix():
 
 @app.route('/templates/hash-table.html', methods=['GET', 'POST'])
 def enchanting_table():
-    if request.method == 'POST':
+    if request.method == "POST":
         cmd = request.form.get('hashmethod')
         numcommand = request.form.get('inputString')
         listall = request.form.get('cmdlist')
@@ -86,8 +86,8 @@ def enchanting_table():
         if numtype <= 0:
             error = 'input is less than 1. Please use an integer greater than or equal to 1.'
             return render_template('hash-table.html', cmd=None, numcommand=None, result=None, listall=None, error=error)
-    
-    return render_template('hash-table.html', cmd=None, numcommand=None, result=None, listall=None, error=None)
+    else:
+        return render_template('hash-table.html', cmd=None, numcommand=None, result=None, listall=None, error=None)
 
 
 @app.route("/templates/searchalgo-interface.html", methods=["GET", "POST"])

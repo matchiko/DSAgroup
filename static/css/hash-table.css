@@ -101,7 +101,7 @@
   }
   .department-of-computer {
     top: 208px;
-    left: 778px;
+    left: 170px;
     text-align: right;
     width: 424px;
     height: 27px;
@@ -230,5 +230,10 @@
     font-size: var(--font-size-sm);
     color: var(--color-white);
     font-family: var(--font-inter);
+  }
+  ul{
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
   }
   
