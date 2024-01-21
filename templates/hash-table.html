@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
     <link rel="stylesheet" href="/static/css/global.css" />
-    <link rel="stylesheet" href="/static/css/Queue-Dequeue.css" />
+    <link rel="stylesheet" href="/static/css/hash-table.css" />
     <link rel="stylesheet" href="/static/css/taskbar-image.css" />
     <link
     rel="stylesheet"
@@ -42,13 +42,7 @@
       
       <div class="definition-of-infix-expression">
         <div class="operators-are-positioned">
-            The dequeue operation in a queue involves the removal of an element from the front of the queue, 
-            adhering to the First In, First Out (FIFO) principle. This means that the element positioned at the front, 
-            having been in the queue the longest, is the first one to be removed. In a queue, elements are added to the rear 
-            (enqueue operation) and removed from the front (dequeue operation). This maintains the order in which elements were added, 
-            ensuring that the first element to be enqueued is the first one to be dequeued. The dequeue operation is crucial 
-            for processing elements in the order they were received, making queues suitable for various applications such as 
-            task scheduling, breadth-first search algorithms, and managing resources in computer systems.
+           Lorem ipsum dolor sit amet.
         </div>
         <i class="department-of-computer"
           >Department of Computer Science, University of Illinois</i
@@ -58,12 +52,7 @@
       <div class="definition-of-postfix-expressi">
         <div class="operators-are-positioned">
           <p class="operands-precede-operators">
-            A queue is a data structure that adheres to the First-In-First-Out (FIFO) principle, indicating that 
-            the first element inserted into the queue will be the first one to be removed. This concept is analogous 
-            to real-world queues or lines, where the first person to join the queue is the first to receive service. 
-            The implementation of queues can vary and is adaptable to specific application requirements. Queues can 
-            be realized using diverse data structures like arrays, linked lists, or others. They find common usage in 
-            tasks such as scheduling, breadth-first search algorithms, and resource management within computer systems.
+            Lorem Ipsum dolor sit amet.
           </p>
         </div>
         <i class="department-of-computer"
@@ -74,27 +63,45 @@
       <div class="infix-to-postfix">
         <div class="your-converted-postfix-container">
           <p class="operands-precede-operators">
-            {% if Enqueue %}
-            <p class="Anim">Queue List: {{ " -> ".join(Enqueue) }}</p>
+            {% if error %}
+            <p class="Anim">{{error}}</p>
             {% endif %}
-            {% if Dequeue %}
-            <p class="Anim" > Dequeue: {{ Dequeue }}</p>
+            {% if result == None%}
+              No data retrieved.
+            {%endif%}
+            {% if result %}
+              <ul>
+                {%for item in result%}
+                  <li> {{item}} </li>
+                {%endfor%}
+              </ul>
             {% endif %}
           </p>
         </div>
 
         <div class="Rectangle23" style="width: 540px; height: 447px; right: 420px; top: -45px; position: absolute; background: rgba(217, 217, 217, 0); border-radius: 30px; border: 3px white solid"></div>
         </div>
-        <div class="Rectangle24" style="width: 360px; height: 447px; left: 925px; top: 125px; position: absolute; background: rgba(217, 217, 217, 0); border-radius: 30px; border: 3px white solid"></div>
+        <div class="Rectangle24" style="width: 360px; height: 1050px; left: 925px; top: 125px; position: absolute; background: rgba(217, 217, 217, 0); border-radius: 30px; border: 3px white solid"></div>
       </div>
 
         <div class="submit-field">
           <form for="/templates/Queue-Dequeue.html" method="post">
-            <label for="inputString" class="form-control" >  Enter a string:     </label>
-              <input type="text" id="inputString" name="inputString" placeholder="Type your data here" size="40">
-              <br>    
-              <input type="submit" id ="enequeue" name="enqueue" value="Queue"  class="btn">
-              <input type="submit" id ="dequeue" name="dequeue" value="Deque" class="btn">
+            <label for="inputString" class="form-control" style="color: white">  select a hash method:     </label>
+            <br>
+              <select name="hashmethod" id="hashmethod">
+                <option value="1">Hash Method 01</option>
+                <option value="2">Hash Method 02</option>
+                <option value="3">Hash Method 03</option>
+              </select>
+            <br>
+            <label for="inputString" class="form-control" style="color: white">  input how many commands:     </label>
+              <input type="text" id="inputString" name="inputString" placeholder="Number of commands. Must be an integer not less than one." size="40">
+            <br>    
+            <label for="cmdlist" class="form-control" style="color: white">  Enter the commands, one every new line. type del before the command (add a space in between) to delete the data:     </label>
+              <textarea id="cmdlist" name="cmdlist" rows="4" cols="50" placeholder="Input your commands here!">
+                </textarea>
+            <br>
+              <input type="submit" id ="hash" name="hash" value="hash" class="btn">
             </form>
           </div>
       </div>
@@ -108,5 +115,12 @@
     <a href="/templates/Memberpage.html">
       <img class="image-12-icon" src="/static/public/image 12.png" alt="">
     </a>
+    <script>
+      function iterateThrough(result) {
+        for(let i = 0; i <= result; i++){
+          return '<li>' + i + '</li>'
+        }
+      }
+    </script>
   </body>
 </html>

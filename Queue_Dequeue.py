@@ -1,5 +1,7 @@
+
+
 class Node:
-    def __init__(self, data: int):
+    def __init__(self, data):
         self.data = data
         self.next = None
         self.prev = None
@@ -9,10 +11,10 @@ class Queue:
         self.front = None
         self.rear = None
 
-    def is_empty(self) -> bool:
+    def is_empty(self):
         return self.front is None
 
-    def enqueue(self, data: int) -> None:
+    def enqueue(self, data):
         new_node = Node(data)
         if self.is_empty():
             self.front = self.rear = new_node
@@ -34,10 +36,10 @@ class Deque:
         self.front = None
         self.rear = None
 
-    def is_empty(self) -> bool:
+    def is_empty(self):
         return self.front is None
 
-    def add_front(self, data: int) -> None:
+    def add_front(self, data):
         new_node = Node(data)
         if self.is_empty():
             self.front = self.rear = new_node
@@ -46,7 +48,7 @@ class Deque:
             self.front.prev = new_node
             self.front = new_node
 
-    def add_rear(self, data: int) -> None:
+    def add_rear(self, data):
         new_node = Node(data)
         if self.is_empty():
             self.front = self.rear = new_node
@@ -76,21 +78,3 @@ class Deque:
         else:
             self.rear.next = None
         return data
-
-def input_queue(queue_list):
-    queue = Queue()
-    for item in queue_list.split():
-        queue.enqueue(item)
-
-    print("Queue:")
-    while not queue.is_empty():
-        print(queue.dequeue())
-
-def input_dequeue(queue_list):
-    deque = Deque()
-    for item in queue_list.split():
-        deque.add_front(item)
-
-    print("Deque from front:")
-    while not deque.is_empty():
-        print(deque.remove_front())
