@@ -23,7 +23,7 @@ class TreeNode:
         mrt3_stations.add_child(TreeNode("North Avenue"))
         mrt3_stations.add_child(TreeNode("Quezon Avenue"))
         mrt3_stations.add_child(TreeNode("Kamuning"))
-        mrt3_stations.add_child(TreeNode("Cubao"))
+        mrt3_stations.add_child(TreeNode("MRT Cubao"))
         mrt3_stations.add_child(TreeNode("MRT Santolan"))
         mrt3_stations.add_child(TreeNode("Ortigas"))
         mrt3_stations.add_child(TreeNode("Shaw Boulevard"))

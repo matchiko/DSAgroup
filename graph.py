@@ -18,7 +18,7 @@ def build_mrt_lrt_graph():
     mrt_lrt_graph.add_vertex('North Avenue')
     mrt_lrt_graph.add_vertex('Quezon Avenue')
     mrt_lrt_graph.add_vertex('Kamuning')
-    mrt_lrt_graph.add_vertex('Cubao')
+    mrt_lrt_graph.add_vertex('MRT Cubao')
     mrt_lrt_graph.add_vertex('MRT Santolan')
     mrt_lrt_graph.add_vertex('Ortigas')
     mrt_lrt_graph.add_vertex('Shaw Boulevard')
@@ -58,8 +58,8 @@ def build_mrt_lrt_graph():
     # MRT Line 3
     mrt_lrt_graph.add_edge('North Avenue', 'Quezon Avenue')
     mrt_lrt_graph.add_edge('Quezon Avenue', 'Kamuning')
-    mrt_lrt_graph.add_edge('Kamuning', 'Cubao')
-    mrt_lrt_graph.add_edge('Cubao', 'MRT Santolan')
+    mrt_lrt_graph.add_edge('Kamuning', 'MRT Cubao')
+    mrt_lrt_graph.add_edge('MRT Cubao', 'MRT Santolan')
     mrt_lrt_graph.add_edge('MRT Santolan', 'Ortigas')
     mrt_lrt_graph.add_edge('Ortigas', 'Shaw Boulevard')
     mrt_lrt_graph.add_edge('Shaw Boulevard', 'Boni')
@@ -70,7 +70,7 @@ def build_mrt_lrt_graph():
     mrt_lrt_graph.add_edge('Magallanes', 'Taft Avenue')
     
     # MRT to LRT Line 2
-    mrt_lrt_graph.add_edge('Cubao', 'Araneta Center-Cubao')
+    mrt_lrt_graph.add_edge('MRT Cubao', 'Araneta Center-Cubao')
 
     # LRT Line 1
     mrt_lrt_graph.add_edge('Baclaran', 'EDSA')
