@@ -68,6 +68,9 @@ def build_mrt_lrt_graph():
     mrt_lrt_graph.add_edge('Buendia', 'Ayala')
     mrt_lrt_graph.add_edge('Ayala', 'Magallanes')
     mrt_lrt_graph.add_edge('Magallanes', 'Taft Avenue')
+    
+    # MRT to LRT Line 2
+    mrt_lrt_graph.add_edge('Cubao', 'Araneta Center-Cubao')
 
     # LRT Line 1
     mrt_lrt_graph.add_edge('Baclaran', 'EDSA')
@@ -82,6 +85,9 @@ def build_mrt_lrt_graph():
     mrt_lrt_graph.add_edge('Carriedo', 'Doroteo Jose')
     mrt_lrt_graph.add_edge('Doroteo Jose', 'Bambang')
     mrt_lrt_graph.add_edge('Bambang', 'Tayuman')
+    
+    # LRT Line 1 to LRT Line 2
+    mrt_lrt_graph.add_edge('Doroteo Jose', 'Recto')
 
     # LRT Line 2
     mrt_lrt_graph.add_edge('Recto', 'Legarda')
