@@ -48,7 +48,7 @@ def build_mrt_lrt_graph():
     mrt_lrt_graph.add_vertex('J. Ruiz')
     mrt_lrt_graph.add_vertex('Gilmore')
     mrt_lrt_graph.add_vertex('Betty Go-Belmonte')
-    mrt_lrt_graph.add_vertex('Araneta Center-Cubao')
+    mrt_lrt_graph.add_vertex('LRT Cubao')
     mrt_lrt_graph.add_vertex('Anonas')
     mrt_lrt_graph.add_vertex('Katipunan')
     mrt_lrt_graph.add_vertex('LRT Santolan')
@@ -70,7 +70,7 @@ def build_mrt_lrt_graph():
     mrt_lrt_graph.add_edge('Magallanes', 'Taft Avenue')
     
     # MRT to LRT Line 2
-    mrt_lrt_graph.add_edge('MRT Cubao', 'Araneta Center-Cubao')
+    mrt_lrt_graph.add_edge('MRT Cubao', 'LRT Cubao')
 
     # LRT Line 1
     mrt_lrt_graph.add_edge('Baclaran', 'EDSA')
@@ -96,8 +96,8 @@ def build_mrt_lrt_graph():
     mrt_lrt_graph.add_edge('V. Mapa', 'J. Ruiz')
     mrt_lrt_graph.add_edge('J. Ruiz', 'Gilmore')
     mrt_lrt_graph.add_edge('Gilmore', 'Betty Go-Belmonte')
-    mrt_lrt_graph.add_edge('Betty Go-Belmonte', 'Araneta Center-Cubao')
-    mrt_lrt_graph.add_edge('Araneta Center-Cubao', 'Anonas')
+    mrt_lrt_graph.add_edge('Betty Go-Belmonte', 'LRT Cubao')
+    mrt_lrt_graph.add_edge('LRT Cubao', 'Anonas')
     mrt_lrt_graph.add_edge('Anonas', 'Katipunan')
     mrt_lrt_graph.add_edge('Katipunan', 'LRT Santolan')
     mrt_lrt_graph.add_edge('LRT Santolan', 'Marikina')

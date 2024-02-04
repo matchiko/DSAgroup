@@ -61,7 +61,7 @@ class TreeNode:
         lrt2_stations.add_child(TreeNode("J. Ruiz"))
         lrt2_stations.add_child(TreeNode("Gilmore"))
         lrt2_stations.add_child(TreeNode("Betty Go-Belmonte"))
-        lrt2_stations.add_child(TreeNode("Araneta Center-Cubao"))
+        lrt2_stations.add_child(TreeNode("LRT Cubao"))
         lrt2_stations.add_child(TreeNode("Anonas"))
         lrt2_stations.add_child(TreeNode("Katipunan"))
         lrt2_stations.add_child(TreeNode("LRT Santolan"))
