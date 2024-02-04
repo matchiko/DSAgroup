@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="/static/css/global.css" />
+    <link rel="stylesheet" href="/static/css/hash-table.css" />
+    <link rel="stylesheet" href="/static/css/taskbar-image.css" />
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+  />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;1,400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="postfixpage">
+      <div class="miniwidget">
+        
+        <img class="miniwidget-icon" alt="" src="/static/public/miniwidget@2x.png" />
+
+        <div class="button">
+          <div class="button-child"></div>
+          <div class="log-in">Log in</div>
+        </div>
+        <div class="log-in1">
+          <div class="contacts"></div>
+          <img
+            class="icons8-log-in-96-1"
+            alt=""
+            src="/static/public/icons8login96-1@2x.png"
+          />
+        </div>
+      </div>
+      <img class="taskbar-icon" alt="" src="/static/public/taskbar.svg" />
+
+      <div class="QueueDeque" style="width: 750px; height: 144px; left: 414px; top: 150px; position: absolute; color: white; font-size: 48px; font-family: Poppins; font-weight: 600; line-height: 72px; word-wrap: break-word">Queue-Deque</div>
+      <div class="Results" style="width: 321px; height: 144px; left: 964px; top: 150px; position: absolute; color: white; font-size: 48px; font-family: Poppins; font-weight: 600; line-height: 72px; word-wrap: break-word">Results</div>
+      
+      <div class="definition-of-infix-expression">
+        <div class="operators-are-positioned">
+           Lorem ipsum dolor sit amet.
+        </div>
+        <i class="department-of-computer"
+          >Department of Computer Science, University of Illinois</i
+        >
+        <b class="what-defines-an">What defines the dequeue data structure?</b>
+      </div>
+      <div class="definition-of-postfix-expressi">
+        <div class="operators-are-positioned">
+          <p class="operands-precede-operators">
+            Lorem Ipsum dolor sit amet.
+          </p>
+        </div>
+        <i class="department-of-computer"
+          >Department of Computer Science, University of Michigan Tech</i
+        >
+        <b class="what-defines-an">What defines the queue data structure?</b>
+      </div>
+      <div class="infix-to-postfix">
+        <div class="your-converted-postfix-container">
+          <p class="operands-precede-operators">
+            {% if error %}
+            <p class="Anim">{{error}}</p>
+            {% endif %}
+            {% if result == None%}
+              No data retrieved.
+            {%endif%}
+            {% if result %}
+              <ul>
+                {%for item in result%}
+                  <li> {{item}} </li>
+                {%endfor%}
+              </ul>
+            {% endif %}
+          </p>
+        </div>
+
+        <div class="Rectangle23" style="width: 540px; height: 447px; right: 420px; top: -45px; position: absolute; background: rgba(217, 217, 217, 0); border-radius: 30px; border: 3px white solid"></div>
+        </div>
+        <div class="Rectangle24" style="width: 360px; height: 1050px; left: 925px; top: 125px; position: absolute; background: rgba(217, 217, 217, 0); border-radius: 30px; border: 3px white solid"></div>
+      </div>
+
+        <div class="submit-field">
+          <form for="/templates/Queue-Dequeue.html" method="post">
+            <label for="inputString" class="form-control" style="color: white">  select a hash method:     </label>
+            <br>
+              <select name="hashmethod" id="hashmethod">
+                <option value="1">Hash Method 01</option>
+                <option value="2">Hash Method 02</option>
+                <option value="3">Hash Method 03</option>
+              </select>
+            <br>
+            <label for="inputString" class="form-control" style="color: white">  input how many commands:     </label>
+              <input type="text" id="inputString" name="inputString" placeholder="Number of commands. Must be an integer not less than one." size="40">
+            <br>    
+            <label for="cmdlist" class="form-control" style="color: white">  Enter the commands, one every new line. type del before the command (add a space in between) to delete the data:     </label>
+              <textarea id="cmdlist" name="cmdlist" rows="4" cols="50" placeholder="Input your commands here!">
+                </textarea>
+            <br>
+              <input type="submit" id ="hash" name="hash" value="hash" class="btn">
+            </form>
+          </div>
+      </div>
+    </div>
+    <a href="/">
+      <img class="image-14-icon" src="/static/public/image 14.png" alt="">
+    </a>
+    <a href="/templates/Memberpage.html">
+      <img class="image-13-icon" src="/static/public/image 13.png" alt="">
+    </a>
+    <a href="/templates/Memberpage.html">
+      <img class="image-12-icon" src="/static/public/image 12.png" alt="">
+    </a>
+    <script>
+      function iterateThrough(result) {
+        for(let i = 0; i <= result; i++){
+          return '<li>' + i + '</li>'
+        }
+      }
+    </script>
+  </body>
+</html>
