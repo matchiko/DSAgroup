@@ -10,6 +10,7 @@ from ternary_search import ternary_search, ternary_search_wrapper
 from postfix import infix_to_postfix
 from Queue_Dequeue import Queue, Deque
 import hash_table
+import graph
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -88,6 +89,17 @@ def enchanting_table():
             return render_template('hash-table.html', cmd=None, numcommand=None, result=None, listall=None, error=error)
     else:
         return render_template('hash-table.html', cmd=None, numcommand=None, result=None, listall=None, error=None)
+
+
+@app.route('/templates/Tree_Graph.html', methods=['GET', 'POST'])
+def station_graph():
+    if request.method == "POST":
+        start = request.form.get('starting_station')
+        end = request.form.get('end_station')
+        result = graph.find_shortest_path(graph.mrt_lrt_graph, start, end)
+        return render_template('Tree_Graph.html', result=result)
+    else:
+        return render_template('Tree_Graph.html', result=None)
 
 
 @app.route("/templates/searchalgo-interface.html", methods=["GET", "POST"])
