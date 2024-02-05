@@ -17,15 +17,14 @@ class TreeNode:
     def build_station_tree(self):
         root = TreeNode("Stations")
 
-
         # MRT Line 3
         mrt3_stations = TreeNode("MRT Line 3 Stations")
 
         mrt3_stations.add_child(TreeNode("North Avenue"))
         mrt3_stations.add_child(TreeNode("Quezon Avenue"))
-        mrt3_stations.add_child(TreeNode("Kamuning"))
+        mrt3_stations.add_child(TreeNode("GMA-Kamuning"))
         mrt3_stations.add_child(TreeNode("MRT Cubao"))
-        mrt3_stations.add_child(TreeNode("MRT Santolan"))
+        mrt3_stations.add_child(TreeNode("Santolan-Annapolis"))
         mrt3_stations.add_child(TreeNode("Ortigas"))
         mrt3_stations.add_child(TreeNode("Shaw Boulevard"))
         mrt3_stations.add_child(TreeNode("Boni"))
@@ -51,6 +50,13 @@ class TreeNode:
         lrt1_stations.add_child(TreeNode("Doroteo Jose"))
         lrt1_stations.add_child(TreeNode("Bambang"))
         lrt1_stations.add_child(TreeNode("Tayuman"))
+        lrt1_stations.add_child(TreeNode("Blumentritt"))
+        lrt1_stations.add_child(TreeNode("Abad Santos"))
+        lrt1_stations.add_child(TreeNode("R. Papa"))
+        lrt1_stations.add_child(TreeNode("5th Avenue"))
+        lrt1_stations.add_child(TreeNode("Monumento"))
+        lrt1_stations.add_child(TreeNode("Balintawak"))
+        lrt1_stations.add_child(TreeNode("Fernando Poe Jr."))
 
         # LRT Line 2
         lrt2_stations = TreeNode("LRT Line 2 Stations")
