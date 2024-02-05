@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='basic_style.css') }}">
+</head>
+<body>
+    <!-- header -->
+    <div class="header">
+        <a href="/">HOME</a>
+        <a href="/MemberPage.html">ABOUT</a>
+        <a href="/AppList.html">APP LISTS</a>
+        <a href="/MemberPage.html">CONTACT</a>
+    </div>
+    <br>
+
+    <div class="contact-container">
+        <h1>Shortest Path</h1>
+        <hr>
+        <form action="/templates/graphs.html" method="post">
+            <label for="startStation">Select Start Station:</label>
+            <select id="startStation" name="startStation">
+                {% for station in stations %}
+                    <option value="{{ station }}">{{ station }}</option>
+                {% endfor %}
+            </select>
+
+            <br>
+
+            <label for="endStation">Select End Station:</label>
+            <select id="endStation" name="endStation">
+                {% for station in stations %}
+                    <option value="{{ station }}">{{ station }}</option>
+                {% endfor %}
+            </select>
+
+            <br>
+
+            <input type="submit" value="Find Shortest Path">
+        </form>
+        <hr>
+
+        {% if shortest_path %}
+            <h2>Shortest Path Result</h2>
+            <p>Shortest path from {{ start_station }} to {{ end_station }}: {{ shortest_path }}</p>
+        {% else %}
+            <h2>No Path Found</h2>
+            <p>No path found from {{ start_station }} to {{ end_station }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
