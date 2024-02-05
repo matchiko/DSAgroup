@@ -84,6 +84,9 @@ def build_mrt_lrt_graph():
     mrt_lrt_graph.add_edge('Monumento', 'Balintawak')
     mrt_lrt_graph.add_edge('Balintawak', 'Fernando Poe Jr.')
     
+    # LRT Line 1 to MRT Line 3
+    mrt_lrt_graph.add_edge('EDSA', 'Taft Avenue')
+    
     # LRT Line 1 to LRT Line 2
     mrt_lrt_graph.add_edge('Doroteo Jose', 'Recto')
 
