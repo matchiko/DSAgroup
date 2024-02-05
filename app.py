@@ -184,12 +184,12 @@ def train():
 
         if shortest_path:
             print(shortest_path)
-            return render_template('/templates/graphs.html', stations=stations, shortest_path=shortest_path, start_station=start_station, end_station=end_station)
+            return render_template("graphs.html", stations=stations, shortest_path=shortest_path, start_station=start_station, end_station=end_station)
         else:
             print("no path")
-            return render_template('/templates/graphs.html', stations=stations, no_path=True, start_station=start_station, end_station=end_station)
+            return render_template("graphs.html", stations=stations, no_path=True, start_station=start_station, end_station=end_station)
     else:
-        return render_template('graphs.html', stations=stations)
+        return render_template("graphs.html", stations=stations)
 
 @app.route('/templates/SortingAlgo.html', methods=['GET', 'POST'])
 def sort():
@@ -198,7 +198,7 @@ def sort():
 
         # Check if input_array is None or empty
         if input_array is None or input_array.strip() == "":
-            return render_template('/templates/SortingAlgo.html', error_message="Please enter valid input.")
+            return render_template("SortingAlgo.html", error_message="Please enter valid input.")
 
         input_array = list(map(int, input_array.split(',')))
 
@@ -217,10 +217,10 @@ def sort():
         else:
             sorted_array = input_array  # Default to the input array if no algorithm is selected
 
-        return render_template('/templates/SortingAlgo.html', result=sorted_array)
+        return render_template("SortingAlgo.html", result=sorted_array)
 
     # If it's a GET request, render the initial page without any sorting results
-    return render_template('SortingAlgo.html')
+    return render_template("SortingAlgo.html")
 
 
 if __name__ == '__main__':
