@@ -10,7 +10,7 @@ from ternary_search import ternary_search, ternary_search_wrapper
 from postfix import infix_to_postfix
 from Queue_Dequeue import Queue, Deque
 import hash_table
-import graph
+from graph import Graph, build_mrt_lrt_graph, find_shortest_path, mrt_lrt_graph
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -90,18 +90,6 @@ def enchanting_table():
     else:
         return render_template('hash-table.html', cmd=None, numcommand=None, result=None, listall=None, error=None)
 
-
-@app.route('/templates/Tree_Graph.html', methods=['GET', 'POST'])
-def station_graph():
-    if request.method == "POST":
-        start = request.form.get('starting_station')
-        end = request.form.get('end_station')
-        result = graph.find_shortest_path(graph.mrt_lrt_graph, start, end)
-        return render_template('Tree_Graph.html', result=result)
-    else:
-        return render_template('Tree_Graph.html', result=None)
-
-
 @app.route("/templates/searchalgo-interface.html", methods=["GET", "POST"])
 def dir():
     
@@ -169,6 +157,31 @@ def search():
         "iterative_search_result": result_iterative,
        # "recursive_search_result": result_recursive
     })
+
+stations = [
+    'North Avenue', 'Quezon Avenue', 'Kamuning', 'MRT Cubao', 'MRT Santolan', 
+    'Ortigas', 'Shaw Boulevard', 'Boni', 'Guadalupe', 'Buendia', 'Ayala', 
+    'Magallanes', 'Taft Avenue', 'Baclaran', 'EDSA', 'Libertad', 'Gil Puyat', 
+    'Vito Cruz', 'Quirino', 'Pedro Gil', 'United Nations', 'Central Terminal', 
+    'Carriedo', 'Doroteo Jose', 'Bambang', 'Tayuman', 'Recto', 'Legarda', 
+    'Pureza', 'V. Mapa', 'J. Ruiz', 'Gilmore', 'Betty Go-Belmonte', 
+    'Araneta Center-Cubao', 'Anonas', 'Katipunan', 'LRT Santolan', 'Marikina', 
+    'Antipolo'
+]
+
+@app.route('/graphs.html', methods=['GET', 'POST'])
+def train():
+    if request.method == 'POST':
+        start_station = request.form['startStation']
+        end_station = request.form['endStation']
+        shortest_path = find_shortest_path(mrt_lrt_graph, start_station, end_station)
+
+        if shortest_path:
+            return render_template('graphs.html', stations=stations, shortest_path=shortest_path, start_station=start_station, end_station=end_station)
+        else:
+            return render_template('graphs.html', stations=stations, no_path=True, start_station=start_station, end_station=end_station)
+    else:
+        return render_template('graphs.html', stations=stations)
 
 
 if __name__ == '__main__':
