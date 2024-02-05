@@ -50,7 +50,7 @@ def build_mrt_lrt_graph():
     mrt_lrt_graph.add_vertex('Antipolo')
     mrt_lrt_graph.add_vertex('North Avenue')
     mrt_lrt_graph.add_vertex('Quezon Avenue')
-    mrt_lrt_graph.add_vertex('Kamuning')
+    mrt_lrt_graph.add_vertex('GMA-Kamuning')
     mrt_lrt_graph.add_vertex('MRT Cubao')
     mrt_lrt_graph.add_vertex('Santolan Annapolis')
     mrt_lrt_graph.add_vertex('Ortigas')
@@ -103,8 +103,8 @@ def build_mrt_lrt_graph():
     
         # MRT Line 3
     mrt_lrt_graph.add_edge('North Avenue', 'Quezon Avenue')
-    mrt_lrt_graph.add_edge('Quezon Avenue', 'Kamuning')
-    mrt_lrt_graph.add_edge('Kamuning', 'MRT Cubao')
+    mrt_lrt_graph.add_edge('Quezon Avenue', 'GMA-Kamuning')
+    mrt_lrt_graph.add_edge('GMA-Kamuning', 'MRT Cubao')
     mrt_lrt_graph.add_edge('MRT Cubao', 'Santolan Annapolis')
     mrt_lrt_graph.add_edge('Santolan Annapolis', 'Ortigas')
     mrt_lrt_graph.add_edge('Ortigas', 'Shaw Boulevard') 
