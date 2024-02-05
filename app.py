@@ -11,6 +11,12 @@ from postfix import infix_to_postfix
 from Queue_Dequeue import Queue, Deque
 import hash_table
 from graph import Graph, build_mrt_lrt_graph, find_shortest_path, mrt_lrt_graph
+from bubble_sort_algo import bubble_sort
+from selection_sort_algo import selection_sort
+from insertion_sort_algo import insertion_sort
+from merge_sort_algo import merge_sort
+from quick_sort_algo import quick_sort
+
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -169,7 +175,7 @@ stations = [
     'Antipolo'
 ]
 
-@app.route('/graphs.html', methods=['GET', 'POST'])
+@app.route('/templates/graphs.html', methods=['GET', 'POST'])
 def train():
     if request.method == 'POST':
         start_station = request.form['startStation']
@@ -177,11 +183,44 @@ def train():
         shortest_path = find_shortest_path(mrt_lrt_graph, start_station, end_station)
 
         if shortest_path:
-            return render_template('graphs.html', stations=stations, shortest_path=shortest_path, start_station=start_station, end_station=end_station)
+            print(shortest_path)
+            return render_template('/templates/graphs.html', stations=stations, shortest_path=shortest_path, start_station=start_station, end_station=end_station)
         else:
-            return render_template('graphs.html', stations=stations, no_path=True, start_station=start_station, end_station=end_station)
+            print("no path")
+            return render_template('/templates/graphs.html', stations=stations, no_path=True, start_station=start_station, end_station=end_station)
     else:
         return render_template('graphs.html', stations=stations)
+
+@app.route('/templates/SortingAlgo.html', methods=['GET', 'POST'])
+def sort():
+    if request.method == 'POST':
+        input_array = request.form.get('inputArray')
+
+        # Check if input_array is None or empty
+        if input_array is None or input_array.strip() == "":
+            return render_template('/templates/SortingAlgo.html', error_message="Please enter valid input.")
+
+        input_array = list(map(int, input_array.split(',')))
+
+        selected_algorithm = request.form.get('algorithm')
+
+        if selected_algorithm == 'bubble':
+            sorted_array = bubble_sort(input_array)
+        elif selected_algorithm == 'selection':
+            sorted_array = selection_sort(input_array)
+        elif selected_algorithm == 'insertion':
+            sorted_array = insertion_sort(input_array)
+        elif selected_algorithm == 'merge':
+            sorted_array = merge_sort(input_array)
+        elif selected_algorithm == 'quick':
+            sorted_array = quick_sort(input_array)
+        else:
+            sorted_array = input_array  # Default to the input array if no algorithm is selected
+
+        return render_template('/templates/SortingAlgo.html', result=sorted_array)
+
+    # If it's a GET request, render the initial page without any sorting results
+    return render_template('SortingAlgo.html')
 
 
 if __name__ == '__main__':
